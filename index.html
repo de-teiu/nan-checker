@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>NanChecker</title>
+    <style type="text/css">
+      #nan {
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a JavaScript library to check text is a naan.</p>
+    <input id="txt" onchange="check();" onkeyup="check();">
+    <div id="nan">
+    <p>This is a nan.<p>
+    <img src="nan.jpg">
+    </div>
+
+    <p>
+      <a href="https://github.com/de-teiu/NanChecker/tree/master">GitHub</a>
+    </p>
+    <script src="./nanchecker.js"></script>
+    <script>
+      function check(){
+        var inputVal =  document.getElementById('txt').value;
+        var nan = document.getElementById('nan');
+        if(NanChecker.isNan(inputVal)){
+          nan.style.display = 'block';
+        }else{
+          nan.style.display = 'none';
+        }
+      }
+    </script>
+
+  </body>
+</html>
